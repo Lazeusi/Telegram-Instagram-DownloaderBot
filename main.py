@@ -5,12 +5,15 @@ from src.utils.logger import get_logger
 from src.config import settings
 from src.handlers import setup_handlers
 from src.database.connection import db
+from src.middlewars import setup_middlewares
 
 log = get_logger()
 async def main():
     
     bot = Bot(token=settings.BOT_TOKEN)
     dp = Dispatcher()
+    
+    await setup_middlewares(dp)
     await setup_handlers(dp)
     await db.check_connection()
     
