@@ -3,6 +3,7 @@ from typing import Callable, Awaitable, Dict, Any
 
 
 from src.database.modles.user import User
+from src.database.modles.admin import Admin
 
 
 
@@ -26,6 +27,10 @@ class RegisterUser(BaseMiddleware):
 
         else:
             await User.update_one(user_id, username)
+            
+        exist_admin = await Admin.find_one(user_id, username)
+        if exist_admin:
+            await Admin.update_one(user_id, username)
 
         # عبور به هندلر بعدی
         return await handler(event, data)

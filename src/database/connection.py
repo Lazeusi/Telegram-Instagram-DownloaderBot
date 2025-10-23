@@ -8,7 +8,9 @@ class Database:
     def __init__(self):
         self.client = AsyncIOMotorClient(settings.MONGO_DB_URI)
         self.db = self.client[settings.MONGO_DB_NAME]
+        # collections
         self.users = self.db['users']
+        self.admins = self.db['admins']
     
     async def check_connection(self):
         try:
