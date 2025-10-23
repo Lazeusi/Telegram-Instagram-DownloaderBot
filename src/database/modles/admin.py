@@ -13,7 +13,8 @@ class Admin:
         if username:
             username = username.lower()
             return await cls.collection.find_one({"username" : username})
-        return await cls.collection.find_one({"user_id" : user_id})
+        elif user_id:
+            return await cls.collection.find_one({"user_id" : user_id})
             
 
     @classmethod

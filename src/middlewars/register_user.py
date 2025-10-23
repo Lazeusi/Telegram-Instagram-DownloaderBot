@@ -21,16 +21,24 @@ class RegisterUser(BaseMiddleware):
         username = event.from_user.username
 
         # جستجو یا ساخت کاربر
-        user = await User.find_one(user_id)
+        user = await User.find_one(user_id = user_id)
         if not user:
-            await User.insert_one(user_id, username)
+            await User.insert_one(user_id = user_id,
+                                  username = username
+                                  )
 
         else:
-            await User.update_one(user_id, username)
+            await User.update_one(user_id = user_id,
+                                  username = username
+                                  )
             
-        exist_admin = await Admin.find_one(user_id, username)
+        exist_admin = await Admin.find_one(user_id = user_id,
+                                           username = username
+                                           )
         if exist_admin:
-            await Admin.update_one(user_id, username)
+            await Admin.update_one(user_id = user_id,
+                                   username = username
+                                   )
 
         # عبور به هندلر بعدی
         return await handler(event, data)
