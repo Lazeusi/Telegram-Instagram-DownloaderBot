@@ -26,7 +26,8 @@ class User:
             username = "unknown"
         await cls.collection.insert_one({"user_id" : user_id,
                                                 "username" : username,
-                                                "join_date" : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                                "join_date" : datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                                                "is_banned" : False
                                                 })
         log.info(f"User {username or user_id} joined the bot.")
         
@@ -36,4 +37,13 @@ class User:
             username = username.lower()
         await cls.collection.update_one({"user_id" : user_id}, {"$set" : {"username" : username}})
         
+    @classmethod
+    async def ban_user(cls, user_id : int):
+        await cls.collection.update_one({"user_id" : user_id}, {"$set" : {"is_banned" : True}})
+        log.info(f"User {user_id} banned.")
+        
+    @classmethod
+    async def unban_user(cls , user_id : int):
+        await cls.collection.update_one({"user_id" : user_id}, {"$set" : {"is_banned" : False}})
+        log.info(f"User {user_id} unbanned.")
         
