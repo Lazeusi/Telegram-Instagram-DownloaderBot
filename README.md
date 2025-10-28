@@ -53,8 +53,8 @@ A modern Telegram bot to download **Instagram media** — posts, reels, and stor
 ```bash
 git clone <https://github.com/Lazeusi/Telegram-Instagram-Downloader.git>
 cd <repo_name>
-Create a virtual environment and install dependencies:
 ```
+- Create a virtual environment and install dependencies:
 ```bash
 python -m venv venv
 # Windows
@@ -64,13 +64,14 @@ source venv/bin/activate
 ```
 ```bash
 pip install -r requirements.txt
-Create a .env file:
 ```
 
+- Create a .env file:
+```.env
 - BOT_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
 - API_URL=http://127.0.0.1:8000
-
-- Start FastAPI (API) and Bot: python main.py
+```
+- Start FastAPI (API) and Bot: *python main.py*
 
 python -m src.bot
 > 🔹 Note: Instagram downloads require internet access; a VPN may be necessary in restricted regions.
