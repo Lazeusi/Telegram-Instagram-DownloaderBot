@@ -10,4 +10,4 @@ router = Router()
 
 @router.message(CommandStart())
 async def start(message: types.Message) -> None:
-    await message.answer(f'Hello, {message.from_user.first_name}!')
+    await message.answer(f'سلام با این ربات میتونید هر مدیایی از اینستاگرام و دانلود کنید بصورت کاملا رایگان \n فقط لینک اون مدیا رو برام بفرست! \n مثال : https://www.instagram.com/p/CF3Tl7oL3Q2' , reply_markup=types.ReplyKeyboardRemove())
