@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=QR%20Code%20Bot&fontSize=45&fontAlignY=35&animation=twinkling&fontColor=fff" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=180&section=header&text=Instagram%20Downloader%20Bot&fontSize=45&fontAlignY=35&animation=twinkling&fontColor=fff" />
 </p>
 
 <h3 align="center">🚀 Instagram media downloader Bot</h3>
