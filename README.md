@@ -17,7 +17,7 @@ A modern Telegram bot to download **Instagram media** — posts, reels, and stor
 |------------|-------------|
 | 🐍 Python 3.11+ | Core language |
 | 🤖 Aiogram 3.22.0 | Telegram Bot framework |
-| 🚀 FasrAPI 0.119.1 | API |
+| 🚀 FastAPI 0.119.1 | API |
 | 🎞️ yt-dlp 2025.10.22 | Instagrm downloader |
 | 🍃 MongoDB | Database |
 | ⚡ Async / Await | Full async architecture |
